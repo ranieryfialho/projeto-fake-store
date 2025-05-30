@@ -58,22 +58,37 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="https://m.media-amazon.com/images/I/61hxqX7cTVL._AC_UF894,1000_QL80_.jpg" class="img-fluid rounded-start" alt="Baby Reborn">
+                        <img src="https://m.media-amazon.com/images/I/61hxqX7cTVL._AC_UF894,1000_QL80_.jpg"
+                            class="img-fluid rounded-start" alt="Baby Reborn">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Baby Reborn</h5>
-                            <p class="card-text">Este bebê reborn é 100% artesanal. Materiais de silicone completo, muito macio, muito confortável, seguro, real ao toque. Pode dar banho.</p>
+                            <p class="card-text">Este bebê reborn é 100% artesanal. Materiais de silicone completo,
+                                muito macio, muito confortável, seguro, real ao toque. Pode dar banho.</p>
                             <p class="card-text"><small class="text-body-secondary">$ 299.00</small></p>
                             <button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
                             <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-
                         </div>
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-primary" id="liveToastBtn">Finalizar Compra</button>
+        </div>
+    </div>
 
-            <button type="button" class="btn btn-success">Finalizar Compra</button>
+    <!-- LIVE TOAST -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span>✅</span>
+                <strong class="me-auto">Compra finalizada!</strong>
+                <small>1 segundo atrás</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Sua compra foi finalizada e logo você vai recebe-la em casa! :)
+            </div>
         </div>
     </div>
 </body>
