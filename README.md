@@ -10,7 +10,6 @@ Este projeto é uma interface moderna e responsiva para uma loja virtual fictíc
 - ✅ Cards responsivos com layout ajustado automaticamente
 - ✅ Offcanvas de carrinho (simulado)
 - ✅ Toast de finalização de compra
-- ✅ Loader (spinner) durante carregamento de dados
 
 ## 🚀 Tecnologias Utilizadas
 
