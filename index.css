@@ -11,3 +11,27 @@
 .toast-header {
     gap: 4px;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding-top: 20px;
+}
+
+main {
+    flex: 1;
+}
+
+
+.card-title-limit {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

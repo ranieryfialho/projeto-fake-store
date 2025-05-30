@@ -17,80 +17,108 @@
 </head>
 
 <body>
-    <!-- NAVBAR/HEADER -->
-    <nav class="navbar navbar-expand-lg bg-body-secondary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">FakeStore</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Eletrônicos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Jóias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" a href="#">Roupas</a>
-                    </li>
-                </ul>
+    <main>
+        <!-- NAVBAR/HEADER -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">FakeStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link filtro-link" aria-current="page" href="#"         onclick="carregarPorCategoria('all')">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link filtro-link" href="#" onclick="carregarPorCategoria('electronics')">Eletrônicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link filtro-link" href="#" onclick="carregarPorCategoria('jewelery')">Jóias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link filtro-link" a href="#" onclick="carregarPorCategoria('men\'s clothing')">Roupas
+                                Masculinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link filtro-link" a href="#" onclick="carregarPorCategoria('women\'s clothing')">Roupas
+                                Femininas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- ESPAÇO DE CARDS (LISTA) -->
-    <div class="container" id="lista"></div>
+        </nav>
 
-    <!-- ASIDE -->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrinho de Compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <!-- EFEITO DE CARREGAMENTO -->
+         <div class="loader" class="text-center my-5 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Carregando...</span>
+            </div>
+
+         </div>
+
+        <!-- ESPAÇO DE CARDS (LISTA) -->
+        <div class="container mt-5 pt-4">
+            <h2 class="text-center mb-4">Produtos</h2>
+            <div class="row g-4 justify-content-center" id="lista"></div>
         </div>
-        <!-- CARD HORIZONTAL -->
-        <div class="offcanvas-body">
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="https://m.media-amazon.com/images/I/61hxqX7cTVL._AC_UF894,1000_QL80_.jpg"
-                            class="img-fluid rounded-start" alt="Baby Reborn">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Baby Reborn</h5>
-                            <p class="card-text">Este bebê reborn é 100% artesanal. Materiais de silicone completo,
-                                muito macio, muito confortável, seguro, real ao toque. Pode dar banho.</p>
-                            <p class="card-text"><small class="text-body-secondary">$ 299.00</small></p>
-                            <button type="button" class="btn btn-primary"><i class="bi bi-pencil-square"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+
+        <!-- ASIDE -->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Carrinho de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- CARD HORIZONTAL -->
+            <div class="offcanvas-body">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://m.media-amazon.com/images/I/61hxqX7cTVL._AC_UF894,1000_QL80_.jpg"
+                                class="img-fluid rounded-start" alt="Baby Reborn">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Baby Reborn</h5>
+                                <p class="card-text">Este bebê reborn é 100% artesanal. Materiais de silicone completo,
+                                    muito macio, muito confortável, seguro, real ao toque. Pode dar banho.</p>
+                                <p class="card-text"><small class="text-body-secondary">$ 299.00</small></p>
+                                <button type="button" class="btn btn-primary"><i
+                                        class="bi bi-pencil-square"></i></button>
+                                <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button type="button" class="btn btn-success" id="liveToastBtn">Finalizar Compra</button>
             </div>
-            <button type="button" class="btn btn-primary" id="liveToastBtn">Finalizar Compra</button>
         </div>
-    </div>
 
-    <!-- LIVE TOAST -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <span>✅</span>
-                <strong class="me-auto">Compra finalizada!</strong>
-                <small>1 segundo atrás</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Sua compra foi finalizada e logo você vai recebe-la em casa! :)
+        <!-- LIVE TOAST -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <span>✅</span>
+                    <strong class="me-auto">Compra finalizada!</strong>
+                    <small>1 segundo atrás</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Sua compra foi finalizada e logo você vai recebe-la em sua casa! :)
+                </div>
             </div>
         </div>
-    </div>
+        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+            class="btn btn-dark position-fixed bottom-0 end-0 m-4 rounded-circle shadow" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        <footer class="bg-dark text-white text-center py-4 mt-s">
+            <p class="mb-0">&copy; 2025 FakeStore. Todos os direitos reservados.</p>
+        </footer>
+    </main>
 </body>
 
 </html>
